@@ -1,38 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import Task from '../Task'
-
-import ListGroup from 'react-bootstrap/ListGroup'
 
 import './index.scss'
 
 const Tasks = () => {
-    const [tasks, setTasks] = useState([
-        {
-            title: 'Купить хлеб',
-            date: Date.now(),
-            status: false
-        },
-        {
-            title: 'Купить молоко',
-            date: Date.now(),
-            status: true
-        },
-        {
-            title: 'Купить сахар',
-            date: Date.now(),
-            status: false
-        }
-    ])
+    const tasks = useSelector(state => state.tasks.tasks)
     return(
        <div className='tasks'>
-           <ListGroup>
-                {tasks.map((task, index) =>
+           <div>
+                {tasks?.map((task, index) =>
                     <Task
                         title={task.title}
+                        date={task.date}
                         status={task.status}
                         key={index}
-                    />)}
-           </ListGroup>
+                    />
+                )}
+           </div>
        </div>
     )
 }

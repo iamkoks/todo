@@ -1,8 +1,38 @@
 .task {
+    display: flex;
+    justify-content: e;
+    border: 3px solid #343a40;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
 
-}
+    &__title-done {
+        margin-right: 5px;
+        flex: 2;
+        text-decoration: line-through;
+        text-decoration-color: red;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
 
-.task-done {
-    text-decoration: line-through;
-	text-decoration-color: red;
+    &__title {
+        margin-right: 5px;
+        flex: 2;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    &__date {
+        flex: 1.8;
+    }
+
+    &__status {
+        flex: 0.2;
+        margin-top: 4px;
+        transform:scale(1.6);
+        opacity:0.9;
+        cursor:pointer;
+    }
 }
